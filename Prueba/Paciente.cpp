@@ -1,30 +1,30 @@
-#include "Persona.hpp"
-Persona::Persona(int edad)
+#include "Paciente.hpp"
+Paciente::Paciente(int edad)
 {
 	this->edad = edad;
 	this->genero = (rand() % 2);
 	this->generarDNI();
 }
-int Persona::getEdad()
+int Paciente::getEdad()
 {
 	return this->edad;
 }
-bool Persona::esmujer()
+bool Paciente::esmujer()
 {
 	return this->genero;
 }
-void Persona::serEdad(int edad)
+void Paciente::serEdad(int edad)
 {
 	this->edad - edad;
 }
-void Persona::mostrar()
+void Paciente::mostrar()
 {
 	string sexo = "El hombre ";
 	if(genero)
 		sexo = "La mujer ";
 	cout << "\t" << setw(10) << sexo << " con DNI " << DNI << " tiene " << edad << " anyos " << endl;
 }
-void Persona::generarDNI()
+void Paciente::generarDNI()
 {
 	char letras[] = "TRWAGMYFPDXBNJZSQVHLCKE";
 	int numDNI = 0, aux = 1E7;
@@ -37,6 +37,6 @@ void Persona::generarDNI()
 	this->DNI[8] = letras[numDNI % 23];
 	this->DNI[9] = '\0';
 }
-Persona::~Persona()
+Paciente::~Paciente()
 {
 }

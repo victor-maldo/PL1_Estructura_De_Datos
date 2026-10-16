@@ -2,15 +2,15 @@
 #include <iomanip>
 using namespace std;
 
-class Persona
+class Paciente
 {
 public:
-	Persona(int edad);
+	Paciente(int edad);
 	int getEdad();
 	bool esMujer();
 	void setEdad(int edad);
 	void mostar();
-	~Persona();
+	~Paciente();
 private:
 	bool genero;
 	int edad;
