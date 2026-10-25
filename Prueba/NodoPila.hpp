@@ -1,13 +1,14 @@
 #include <iostream>
+#include "Paciente.hpp"         //nuevo
 using namespace std;
 
 class NodoPila
 {
 public:
-	NodoPila(int v, NodoPila* sig = NULL);
+	NodoPila(Paciente v, NodoPila* sig = NULL);   //Antes: int -> Paciente
 	~NodoPila();
 private:
-	int valor;
+	Paciente valor;                               //Antes: int -> Paciente
 	NodoPila* siguiente;
 	friend class Pila;
 };

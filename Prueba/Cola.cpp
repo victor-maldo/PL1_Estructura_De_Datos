@@ -7,7 +7,7 @@ Cola::Cola()
     longitud = 0;
 }
 
-void Cola::insertar(int v)
+void Cola::insertar(Paciente v)                   //Antes: int -> Paciente
 {
     pnodoCola nuevo;
     nuevo = new NodoCola(v);
@@ -22,21 +22,19 @@ void Cola::insertar(int v)
 void Cola::mostrar()
 {
     pnodoCola aux = primero;
-    cout << "\tEl contenido de la cola es: ";
     while(aux) {
-        cout << "->" << aux->valor;
+        aux->valor.mostrar();                     //Antes: cout << aux->valor
         aux = aux->siguiente;
     }
-    cout << endl;
 }
 
-int Cola::eliminar()
+Paciente Cola::eliminar()                         //Antes: int -> Paciente
 {
     pnodoCola nodo;
-    int v;
+    Paciente v;                                   //Antes: int -> Paciente
     nodo = primero;
     if(!nodo)
-        return 0;
+        return Paciente();                        //Antes: return 0
     primero = nodo->siguiente;
     v = nodo->valor;
     delete nodo;
@@ -46,9 +44,27 @@ int Cola::eliminar()
     return v;
 }
 
-int Cola::verPrimero()
+Paciente Cola::verPrimero()                       // CAMBIO: int -> Paciente
 {
+    if(!primero)                                  // CAMBIO: comprobación nueva
+        return Paciente();
     return primero->valor;
+}
+
+int Cola::getLongitud()                           // CAMBIO: nuevo
+{
+    return longitud;
+}
+
+bool Cola::esVacia()                              // CAMBIO: nuevo
+{
+    return primero == NULL;
+}
+
+void Cola::vaciar()                               // CAMBIO: nuevo
+{
+    while(primero)
+        eliminar();
 }
 
 Cola::~Cola()

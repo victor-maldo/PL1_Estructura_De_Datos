@@ -1,20 +1,27 @@
 #include <iostream>
-#include <iomanip>
+#include <string>
 using namespace std;
 
 class Paciente
 {
 public:
-	Paciente(int edad);
-	int getEdad();
-	bool esMujer();
-	void setEdad(int edad);
-	void mostar();
-	~Paciente();
+    Paciente();
+    Paciente(int numeroDni, bool apendicitis);
+    ~Paciente();
+
+    string getDni();
+    int getId();
+    int getHabitacion();
+    bool tieneApendicitis();
+
+    void setId(int id);
+    void setHabitacion(int habitacion);
+
+    void mostrar();
+
 private:
-	bool genero;
-	int edad;
-	char DNI[10];
-	
-	void generarDNI();
+    string dni;
+    int id;
+    int habitacion;
+    bool apendicitis;
 };

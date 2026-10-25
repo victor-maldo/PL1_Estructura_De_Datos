@@ -5,10 +5,13 @@ class Cola
 public:
     Cola();
     ~Cola();
-    void insertar(int v);
-    int eliminar();
+    void insertar(Paciente v);  //Antes: int -> Paciente
+    Paciente eliminar();        //Antes: int -> Paciente
     void mostrar();
-    int verPrimero();
+    Paciente verPrimero();      //Antes: int -> Paciente
+    int getLongitud();          //nuevo
+    bool esVacia();             //nuevo
+    void vaciar();              //nuevo
 private:
     pnodoCola primero, ultimo;
     int longitud;

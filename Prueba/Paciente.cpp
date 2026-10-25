@@ -1,42 +1,48 @@
 #include "Paciente.hpp"
-Paciente::Paciente(int edad)
+#include <iomanip>
+
+Paciente::Paciente()
 {
-	this->edad = edad;
-	this->genero = (rand() % 2);
-	this->generarDNI();
+    dni = "";
+    id = 0;
+    habitacion = 0;
+    apendicitis = false;
 }
-int Paciente::getEdad()
+
+Paciente::Paciente(int numeroDni, bool apendicitis)
 {
-	return this->edad;
+    const string letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+
+    string numero = to_string(numeroDni);
+    while (numero.length() < 8)          
+        numero = "0" + numero;
+
+    dni = numero + letras[numeroDni % 23];
+    this->apendicitis = apendicitis;
+    id = 0;
+    habitacion = 0;
 }
-bool Paciente::esmujer()
-{
-	return this->genero;
-}
-void Paciente::serEdad(int edad)
-{
-	this->edad - edad;
-}
+
+Paciente::~Paciente() {}
+
+string Paciente::getDni()           { return dni; }
+int    Paciente::getId()            { return id; }
+int    Paciente::getHabitacion()    { return habitacion; }
+bool   Paciente::tieneApendicitis() { return apendicitis; }
+
+void Paciente::setId(int id)                 { this->id = id; }
+void Paciente::setHabitacion(int habitacion) { this->habitacion = habitacion; }
+
 void Paciente::mostrar()
 {
-	string sexo = "El hombre ";
-	if(genero)
-		sexo = "La mujer ";
-	cout << "\t" << setw(10) << sexo << " con DNI " << DNI << " tiene " << edad << " anyos " << endl;
-}
-void Paciente::generarDNI()
-{
-	char letras[] = "TRWAGMYFPDXBNJZSQVHLCKE";
-	int numDNI = 0, aux = 1E7;
-	for(int i = 0; i < 8; i++){
-		int num = rand() % 10;
-		this->DNI[i] = '0' + num;
-		numDNI = numDNI + num * aux;
-		aux /= 10;
-	}
-	this->DNI[8] = letras[numDNI % 23];
-	this->DNI[9] = '\0';
-}
-Paciente::~Paciente()
-{
+    cout << "El paciente cuyo DNI es " << dni;
+    if (apendicitis)
+        cout << " tiene apendicitis";
+    else
+        cout << "     tiene hernias";      
+
+    if (id != 0)
+        cout << ", su ID es: " << setw(2) << id
+             << " y su habitacion asignada es: " << habitacion;
+    cout << endl;
 }
