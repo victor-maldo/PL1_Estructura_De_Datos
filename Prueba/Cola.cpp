@@ -30,14 +30,15 @@ void Cola::mostrar()
 
 Paciente Cola::eliminar()                         //Antes: int -> Paciente
 {
-    pnodoCola nodo;
+    pnodoCola aux;
     Paciente v;                                   //Antes: int -> Paciente
-    nodo = primero;
-    if(!nodo)
+    aux = primero;
+    if(!aux)
         return Paciente();                        //Antes: return 0
-    primero = nodo->siguiente;
-    v = nodo->valor;
-    delete nodo;
+    primero = aux->siguiente;
+    v = aux->valor;
+	aux->siguiente = NULL;						//CAMBIO: Declaramos el puntero siguiente a null por seguridad
+    delete aux;
     if(!primero)
         ultimo = NULL;
     longitud--;
@@ -69,6 +70,5 @@ void Cola::vaciar()                               // CAMBIO: nuevo
 
 Cola::~Cola()
 {
-    while(primero)
-        eliminar();
+	vaciar();		//CAMBIO: En vez de volver a poner el contenido del método "vaciar", directamente le llamamos.
 }

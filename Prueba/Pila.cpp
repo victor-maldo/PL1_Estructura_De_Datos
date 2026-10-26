@@ -16,21 +16,21 @@ void Pila::insertar(Paciente v)                    //Antes: int -> Paciente
 
 Paciente Pila::extraer()                           //Antes: int -> Paciente
 {
-    pnodoPila nodo;
+    pnodoPila aux;
     Paciente v;                                    //Antes: int -> Paciente
     if(!ultimo)
         return Paciente();                         //Antes: return 0
-    nodo = ultimo;
-    ultimo = nodo->siguiente;
-    v = nodo->valor;
+    aux = ultimo;
+    ultimo = aux->siguiente;
+    v = aux->valor;
+	aux->siguiente = NULL;						//CAMBIO: Declaramos el puntero siguiente a null por seguridad
     longitud--;
-    delete nodo;
+    delete aux;
     return v;
 }
 
 Paciente Pila::cima()                              //Antes: int -> Paciente
 {
-    pnodoPila nodo;
     if(!ultimo)
         return Paciente();                         //Antes: return 0
     return ultimo->valor;
@@ -59,19 +59,11 @@ void Pila::vaciar()                                //nuevo
 {
     pnodoPila aux;
     while(ultimo) {
-        aux = ultimo;
-        ultimo = ultimo->siguiente;
-        delete aux;
+		extraer();								//CAMBIO: En vez de volver a eliminar de 1 en 1, llamamos al método extraer en bucle
     }
-    longitud = 0;
 }
 
 Pila::~Pila()
 {
-    pnodoPila aux;
-    while(ultimo) {
-        aux = ultimo;
-        ultimo = ultimo->siguiente;
-        delete aux;
-    }
+	vaciar();								//CAMBIO: En vez de volver a vaciar la pila con el mismo código, llamamos al método vaciar.
 }
