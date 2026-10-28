@@ -1,3 +1,6 @@
+#ifndef PACIENTE_HPP
+#define PACIENTE_HPP
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -25,3 +28,5 @@ private:
     int habitacion;
     bool apendicitis;
 };
+
+#endif

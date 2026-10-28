@@ -1,3 +1,6 @@
+#ifndef LISTA_HPP
+#define LISTA_HPP
+
 #include "NodoLista.hpp"
 
 class Lista
@@ -5,9 +8,9 @@ class Lista
 public:
 	Lista();
 	~Lista();
-	void instertarEnOrden(Paciente v);
+	void insertarEnOrden(Paciente v);
 	void mostrar();
-	Paciente extraerPrimero()
+	Paciente extraerPrimero();
 	Paciente getPrimero();
 	Paciente getUltimo();
 	int getLongitud();
@@ -16,4 +19,6 @@ public:
 private:
 	pnodoLista primero;
 	int longitud;
-}
+};
+
+#endif

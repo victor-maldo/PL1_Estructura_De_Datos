@@ -1,3 +1,6 @@
+#ifndef NODOPILA_HPP
+#define NODOPILA_HPP
+
 #include <iostream>
 #include "Paciente.hpp"         //nuevo
 using namespace std;
@@ -14,3 +17,5 @@ private:
 };
 
 typedef NodoPila* pnodoPila;
+
+#endif
