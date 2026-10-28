@@ -104,9 +104,9 @@
       <File Name="NodoPila.cpp"/>
     </VirtualDirectory>
     <VirtualDirectory Name="Header Files">
+      <File Name="Controlador.hpp"/>
       <File Name="Lista.hpp"/>
       <File Name="Cola.hpp"/>
-      <File Name="Controlador.hpp"/>
       <File Name="NodoLista.hpp"/>
       <File Name="NodoCola.hpp"/>
       <File Name="Paciente.hpp"/>
