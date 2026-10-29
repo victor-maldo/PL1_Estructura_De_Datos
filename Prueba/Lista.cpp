@@ -35,7 +35,7 @@ void Lista::mostrar(){
 	}
 }
 
-Paciente Lista::extrearPrimero(){
+Paciente Lista::extraerPrimero(){
 	if(!primero){
 		return Paciente();
 	}
@@ -75,9 +75,9 @@ bool Lista::esVacia(){
 }
 
 void Lista::vaciar(){
-	pnodoLista aux;
+								// Innecesario pnodoLista aux;   
 	while(primero){
-		extrear_primero();
+		extraerPrimero();
 	}
 }
 

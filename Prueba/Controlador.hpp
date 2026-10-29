@@ -11,18 +11,18 @@ public:
 	Controlador();
 	~Controlador();
 	
-	void opcionA_generarPacientes();
-	void opcionB_mostrarPila();
-	void opcionC_borrarPila();
-	void opcionD_pasarAColas();
-	void opcionE_mostrarSalasAB();
-	void opcionF_mostrarSalasCD();
-	void opcionG_borrarSalas();
-	void opcionH_pasarAListas();
-	void opcionI_mostrarQuirofanoApendicitis();
-	void opcionJ_mostrarQuirofanoHernias();
-	void opcionK_mostrarExtremosPrioridad();
-	void opcionL_Reiniciar();
+	void genera12Pacientes();
+	void muestraPacientes();
+	void borraPacientesPila();
+	void encolarPacientes();
+	void muestraPacientesSalasAyB();
+	void muestraPacientesSalasCyD();
+	void borraPacientesColas();
+	void enlistarPacientes();
+	void muestraPacientesApendicitis();
+	void muestraPacientesHernias();
+	void buscarPacientes();
+	void reiniciar();
 	
 private:
 	Pila pilaPacientes;
