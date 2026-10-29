@@ -10,6 +10,42 @@ Controlador::Controlador()
 	srand(time(NULL));
 }
 
+int Controlador::pacientesEnPila()
+{
+	return pilaPacientes.getLongitud();
+}
+
+int Controlador::pacientesEnSalaA()
+{
+	return salaA.getLongitud();
+}
+
+int Controlador::pacientesEnSalaB()
+{
+	return salaB.getLongitud();
+}
+
+int Controlador::pacientesEnSalaC()
+{
+	return salaC.getLongitud();
+}
+
+int Controlador::pacientesEnSalaD()
+{
+	return salaD.getLongitud();
+}
+
+int Controlador::pacientesEnListaApendicitis()
+{
+	return quirofanoApendicitis.getLongitud();
+}
+
+int Controlador::pacientesEnListaHernias()
+{
+	return quirofanoHernias.getLongitud();
+}
+
+
 void Controlador::opcionA_generarPacientes()
 {
 	if(pilaPacientes.getLongitud() == 48){
@@ -117,19 +153,19 @@ void Controlador::opcionG_borrarSalas()
 void Controlador::opcionH_pasarAListas()
 {
 	while(!salaA.esVacia()){
-		quirofanoApendicitis.insertarEnOrden(salaA.eliminar(););
+		quirofanoApendicitis.insertarEnOrden(salaA.eliminar());
 		
 	}
 	while(!salaB.esVacia()){
-		quirofanoApendicitis.insertarEnOrden(salaB.eliminar(););
+		quirofanoApendicitis.insertarEnOrden(salaB.eliminar());
 		
 	}
 	while(!salaC.esVacia()){
-		quirofanoHernias.insertarEnOrden(salaC.eliminar(););
+		quirofanoHernias.insertarEnOrden(salaC.eliminar());
 		
 	}
 	while(!salaD.esVacia()){
-		quirofanoHernias.insertarEnOrden(salaD.eliminar(););
+		quirofanoHernias.insertarEnOrden(salaD.eliminar());
 		
 	}
 }

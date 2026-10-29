@@ -11,6 +11,14 @@ public:
 	Controlador();
 	~Controlador();
 	
+	
+	int pacientesEnPila();
+	int pacientesEnSalaA();
+	int pacientesEnSalaB();
+	int pacientesEnSalaC();
+	int pacientesEnSalaD();
+	int pacientesEnListaApendicitis();
+	int pacientesEnListaHernias();
 	void opcionA_generarPacientes();
 	void opcionB_mostrarPila();
 	void opcionC_borrarPila();
