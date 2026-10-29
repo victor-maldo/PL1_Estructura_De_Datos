@@ -11,7 +11,7 @@ int main(int argc, char** argv)
 		cout << "\tPacientes en la pila -> " << Controlador.pacientesEnPila() << "\n\tPacientes en las colas:\n \t\tSala A-> " << Controlador.pacientesEnSalaA() << "\tSala B-> "
              << Controlador.pacientesEnSalaB() << "\tSala C-> " << Controlador.pacientesEnSalaC() << "\tSala D-> " << Controlador.pacientesEnSalaD()
              << " \n\tPacientes en las listas:\n \t\tQuirofano Apendicitis-> " << Controlador.pacientesEnListaApendicitis() << "\tQuirofano hernias-> " << Controlador.pacientesEnListaHernias() 
-             << "\n\tPacientes en el arbol -> " //<< 0 controlador.pacientesEnArbol()* << "\n";
+             << "\n\tPacientes en el arbol -> " << 0 /*controlador.pacientesEnArbol()*/ << "\n";
         cout << "\t----------------------------------------------------------------------\n\n";
 
 		cout << "\tA. Generar 12 pacientes de forma aleatoria y almacenarlos en la Pila.\n";
