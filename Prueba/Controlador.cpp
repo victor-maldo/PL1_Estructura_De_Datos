@@ -10,7 +10,6 @@ Controlador::Controlador()
 	srand(time(NULL));
 }
 
-<<<<<<< HEAD
 int Controlador::pacientesEnPila()
 {
 	return pilaPacientes.getLongitud();
@@ -47,10 +46,7 @@ int Controlador::pacientesEnListaHernias()
 }
 
 
-void Controlador::opcionA_generarPacientes()
-=======
 void Controlador::genera12Pacientes()
->>>>>>> cad20a68d21e3a1d60e59fceab87d248b2724942
 {
 	if(pilaPacientes.getLongitud() == 48){
 		std::cout <<"No se puede genera más pacientes, pila llena\n";
@@ -73,21 +69,18 @@ void Controlador::genera12Pacientes()
 	}
 }
 
-void Controlador::opcionB_mostrarPila()
 void Controlador::muestraPacientes()
 {
 	std::cout << "Pacientes en la pila:\n";
 	pilaPacientes.mostrar();
 }
 
-void Controlador::opcionC_borrarPila()
 void Controlador::borraPacientesPila()
 {
 	pilaPacientes.vaciar();
 	std::cout << "Pila de pacientes vaciada con éxito\n";
 }
 
-void Controlador::opcionD_pasarAColas()
 void Controlador::encolarPacientes()
 {
 	char sala;
@@ -129,7 +122,6 @@ void Controlador::encolarPacientes()
 
 }
 
-void Controlador::opcionE_mostrarSalasAB()
 void Controlador::muestraPacientesSalasAyB()
 {
 	std::cout << "Sala A:\n";
@@ -138,7 +130,6 @@ void Controlador::muestraPacientesSalasAyB()
 	salaB.mostrar();
 }
 
-void Controlador::opcionF_mostrarSalasCD()
 void Controlador::muestraPacientesSalasCyD()
 {
 	std::cout << "Sala C:\n";
@@ -147,7 +138,6 @@ void Controlador::muestraPacientesSalasCyD()
 	salaD.mostrar();
 }
 
-void Controlador::opcionG_borrarSalas()
 void Controlador::borraPacientesColas()
 {
 	salaA.vaciar();
@@ -160,15 +150,10 @@ void Controlador::borraPacientesColas()
 	std::cout << "Sala D borrada con exito\n";
 }
 
-void Controlador::opcionH_pasarAListas()
 void Controlador::enlistarPacientes()
 {
 	while(!salaA.esVacia()){
-<<<<<<< HEAD
-		quirofanoApendicitis.insertarEnOrden(salaA.eliminar());
-=======
 		quirofanoApendicitis.insertarEnOrden(salaA.eliminar()); //He quitado los ; que había detrás del paréntesis salaABCD.eliminar
->>>>>>> cad20a68d21e3a1d60e59fceab87d248b2724942
 		
 	}
 	while(!salaB.esVacia()){
@@ -184,21 +169,19 @@ void Controlador::enlistarPacientes()
 		
 	}
 }
-void Controlador::opcionI_mostrarQuirofanoApendicitis()
+
 void Controlador::muestraPacientesApendicitis()
 {
 	std::cout << "Quirofano apendicitis:\n";
 	quirofanoApendicitis.mostrar();
 }
 
-void Controlador::opcionJ_mostrarQuirofanoHernias()
 void Controlador::muestraPacientesHernias()
 {
 	std::cout << "Quirofano hernias:\n";
 	quirofanoHernias.mostrar();
 }
 
-void Controlador::opcionK_mostrarExtremosPrioridad()
 void Controlador::buscarPacientes()
 {
 	std::cout << "Paciente con apendicitis con menor prioridad:\n";
@@ -207,7 +190,6 @@ void Controlador::buscarPacientes()
 	quirofanoHernias.getPrimero().mostrar();
 }
 
-void Controlador::opcionL_Reiniciar()
 void Controlador::reiniciar()
 {
 	pilaPacientes.vaciar();
