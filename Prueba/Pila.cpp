@@ -57,7 +57,6 @@ bool Pila::esVacia()                               //nuevo
 
 void Pila::vaciar()                                //nuevo
 {
-    pnodoPila aux;
     while(ultimo) {
 		extraer();								//CAMBIO: En vez de volver a eliminar de 1 en 1, llamamos al método extraer en bucle
     }

@@ -58,7 +58,7 @@ void Controlador::genera12Pacientes()
 			}
 			
 			int enfermedad = rand() % 2;
-			int dni = (rand() % (99999999 - 10000000 + 1)) + 10000000;
+			int dni = (rand() % 10000) * 10000 + rand() % 10000;
 			Paciente nuevoPaciente(dni, enfermedad);
 			
 			pilaPacientes.insertar(nuevoPaciente);
