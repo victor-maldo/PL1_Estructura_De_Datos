@@ -11,6 +11,7 @@ public:
 	Controlador();
 	~Controlador();
 	
+<<<<<<< HEAD
 	
 	int pacientesEnPila();
 	int pacientesEnSalaA();
@@ -31,6 +32,20 @@ public:
 	void opcionJ_mostrarQuirofanoHernias();
 	void opcionK_mostrarExtremosPrioridad();
 	void opcionL_Reiniciar();
+=======
+	void genera12Pacientes();
+	void muestraPacientes();
+	void borraPacientesPila();
+	void encolarPacientes();
+	void muestraPacientesSalasAyB();
+	void muestraPacientesSalasCyD();
+	void borraPacientesColas();
+	void enlistarPacientes();
+	void muestraPacientesApendicitis();
+	void muestraPacientesHernias();
+	void buscarPacientes();
+	void reiniciar();
+>>>>>>> cad20a68d21e3a1d60e59fceab87d248b2724942
 	
 private:
 	Pila pilaPacientes;
