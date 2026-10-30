@@ -8,11 +8,11 @@ class Lista
 public:
 	Lista();
 	~Lista();
-	void insertarEnOrden(Paciente v);
+	void insertarEnOrden(Paciente* v);
 	void mostrar();
-	Paciente extraerPrimero();
-	Paciente getPrimero();
-	Paciente getUltimo();
+	Paciente* extraerPrimero();
+	Paciente* getPrimero();
+	Paciente* getUltimo();
 	int getLongitud();
 	bool esVacia();
 	void vaciar();

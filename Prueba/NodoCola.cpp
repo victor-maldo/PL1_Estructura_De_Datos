@@ -1,6 +1,6 @@
 #include "NodoCola.hpp"
 
-NodoCola::NodoCola(Paciente v, NodoCola* sig)     
+NodoCola::NodoCola(Paciente* v, NodoCola* sig)     
 {
     valor = v;
     siguiente = sig;

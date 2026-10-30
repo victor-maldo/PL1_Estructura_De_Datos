@@ -8,10 +8,10 @@ using namespace std;
 class NodoLista
 {
 public:
-	NodoLista(Paciente v, NodoLista* sig = NULL);
+	NodoLista(Paciente* v, NodoLista* sig = NULL);
 	~NodoLista();
 private:
-	Paciente valor;
+	Paciente* valor;
 	NodoLista* siguiente;
 	friend class Lista;
 };

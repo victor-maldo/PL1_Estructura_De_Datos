@@ -8,10 +8,10 @@ using namespace std;
 class NodoCola
 {
 public:
-    NodoCola(Paciente v, NodoCola* sig = NULL);   
+    NodoCola(Paciente* v, NodoCola* sig = NULL);   
     ~NodoCola();
 private:
-    Paciente valor;                               
+    Paciente* valor;                               
     NodoCola* siguiente;
     friend class Cola;
 };

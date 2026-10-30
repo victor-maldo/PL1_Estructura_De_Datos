@@ -8,10 +8,10 @@ using namespace std;
 class NodoPila
 {
 public:
-	NodoPila(Paciente v, NodoPila* sig = NULL);   
+	NodoPila(Paciente* v, NodoPila* sig = NULL);   
 	~NodoPila();
 private:
-	Paciente valor;                               
+	Paciente* valor;                               
 	NodoPila* siguiente;
 	friend class Pila;
 };

@@ -59,11 +59,11 @@ void Controlador::genera12Pacientes()
 			
 			int enfermedad = rand() % 2;
 			int dni = (rand() % 10000) * 10000 + rand() % 10000;
-			Paciente nuevoPaciente(dni, enfermedad);
+			Paciente* nuevoPaciente = new Paciente(dni, enfermedad);
 			
 			pilaPacientes.insertar(nuevoPaciente);
 			
-			std::cout << "Paciente con DNI: " << nuevoPaciente.getDni() << " y con " << (enfermedad ? "Apendicitis" : "Hernia") << " creado correctamente.\n";
+			std::cout << "Paciente con DNI: " << nuevoPaciente->getDni() << " y con " << (enfermedad ? "Apendicitis" : "Hernia") << " creado correctamente.\n";
  
 		}
 	}
@@ -85,11 +85,11 @@ void Controlador::encolarPacientes()
 {
 	char sala;
 	while (pilaPacientes.getLongitud() > 0){
-		Paciente paciente = pilaPacientes.cima();
-		if(paciente.tieneApendicitis()){
+		Paciente* paciente = pilaPacientes.cima();
+		if(paciente->tieneApendicitis()){
 			
-			paciente.setId(contadorIdApendicitis);
-			paciente.setHabitacion(contadorHabApendicitis);
+			paciente->setId(contadorIdApendicitis);
+			paciente->setHabitacion(contadorHabApendicitis);
 			contadorIdApendicitis++;
 			contadorHabApendicitis++;
 			
@@ -102,8 +102,8 @@ void Controlador::encolarPacientes()
 			}
 		}else{
 			
-			paciente.setId(contadorIdHernias);
-			paciente.setHabitacion(contadorHabHernias);
+			paciente->setId(contadorIdHernias);
+			paciente->setHabitacion(contadorHabHernias);
 			contadorIdHernias++;
 			contadorHabHernias++;
 			
@@ -115,7 +115,7 @@ void Controlador::encolarPacientes()
 				sala = 'D';
 			}
 		}
-		std::cout << "Paciente :" << paciente.getDni() << " insertado en la sala " << sala << " en la habitación " << paciente.getHabitacion() << "\n"; 
+		std::cout << "Paciente :" << paciente->getDni() << " insertado en la sala " << sala << " en la habitación " << paciente->getHabitacion() << "\n"; 
 		pilaPacientes.extraer();
 		
 	}
@@ -185,9 +185,9 @@ void Controlador::muestraPacientesHernias()
 void Controlador::buscarPacientes()
 {
 	std::cout << "Paciente con apendicitis con menor prioridad:\n";
-	quirofanoApendicitis.getUltimo().mostrar();
+	quirofanoApendicitis.getUltimo()->mostrar();
 	std::cout << "Paciente con hernias de mayor prioridad:\n";
-	quirofanoHernias.getPrimero().mostrar();
+	quirofanoHernias.getPrimero()->mostrar();
 }
 
 void Controlador::reiniciar()

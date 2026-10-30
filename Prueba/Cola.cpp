@@ -7,7 +7,7 @@ Cola::Cola()
     longitud = 0;
 }
 
-void Cola::insertar(Paciente v)                   
+void Cola::insertar(Paciente* v)                   
 {
     pnodoCola nuevo;
     nuevo = new NodoCola(v);
@@ -23,18 +23,18 @@ void Cola::mostrar()
 {
     pnodoCola aux = primero;
     while(aux) {
-        aux->valor.mostrar();                     
+        aux->valor->mostrar();                     
         aux = aux->siguiente;
     }
 }
 
-Paciente Cola::eliminar()                         
+Paciente* Cola::eliminar()                         
 {
     pnodoCola aux;
-    Paciente v;                                   
+    Paciente* v;                                   
     aux = primero;
     if(!aux)
-        return Paciente();                        
+        return NULL;                        
     primero = aux->siguiente;
     v = aux->valor;
 	aux->siguiente = NULL;
@@ -45,10 +45,10 @@ Paciente Cola::eliminar()
     return v;
 }
 
-Paciente Cola::verPrimero()                       
+Paciente* Cola::verPrimero()                       
 {
     if(!primero)                                  
-        return Paciente();
+        return NULL;
     return primero->valor;
 }
 

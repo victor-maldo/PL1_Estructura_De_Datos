@@ -8,9 +8,9 @@ class Pila
 public: 
 	Pila();
 	~Pila();
-	void insertar(Paciente v);  
-	Paciente extraer();         
-	Paciente cima();            
+	void insertar(Paciente* v);  
+	Paciente* extraer();         
+	Paciente* cima();            
 	void mostrar();
 	int getLongitud();
 	bool esVacia();             

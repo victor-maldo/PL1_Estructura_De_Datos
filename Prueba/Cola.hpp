@@ -8,10 +8,10 @@ class Cola
 public:
     Cola();
     ~Cola();
-    void insertar(Paciente v);  
-    Paciente eliminar();        
+    void insertar(Paciente* v);  
+    Paciente* eliminar();        
     void mostrar();
-    Paciente verPrimero();      
+    Paciente* verPrimero();      
     int getLongitud();          
     bool esVacia();             
     void vaciar();              

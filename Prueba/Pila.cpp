@@ -6,7 +6,7 @@ Pila::Pila()
     longitud = 0;
 }
 
-void Pila::insertar(Paciente v)                    
+void Pila::insertar(Paciente* v)                    
 {
     pnodoPila nuevo;
     nuevo = new NodoPila(v, ultimo);
@@ -14,12 +14,12 @@ void Pila::insertar(Paciente v)
     longitud++;
 }
 
-Paciente Pila::extraer()                           
+Paciente* Pila::extraer()                           
 {
     pnodoPila aux;
-    Paciente v;                                    
+    Paciente* v;                                    
     if(!ultimo)
-        return Paciente();                         
+        return NULL;                         
     aux = ultimo;
     ultimo = aux->siguiente;
     v = aux->valor;
@@ -29,10 +29,10 @@ Paciente Pila::extraer()
     return v;
 }
 
-Paciente Pila::cima()                              
+Paciente* Pila::cima()                              
 {
     if(!ultimo)
-        return Paciente();                         
+        return NULL;                         
     return ultimo->valor;
 }
 
@@ -40,7 +40,7 @@ void Pila::mostrar()
 {
     pnodoPila aux = ultimo;
     while(aux) {
-        aux->valor.mostrar();                      
+        aux->valor->mostrar();                      
         aux = aux->siguiente;
     }
 }

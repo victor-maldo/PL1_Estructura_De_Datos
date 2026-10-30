@@ -6,19 +6,19 @@ Lista::Lista()
 	longitud = 0;
 }
 
-void Lista::insertarEnOrden(Paciente v)
+void Lista::insertarEnOrden(Paciente* v)
 {
 	pnodoLista nuevo = new NodoLista(v);
 	
 	if(!primero){
 		primero = nuevo;
-	} else if(v.getId() > primero->valor.getId()){
+	} else if(v->getId() > primero->valor->getId()){
 		nuevo->siguiente = primero;
 		primero = nuevo;
 	}else{
 		pnodoLista aux = primero;
 		
-		while(aux->siguiente != NULL && aux->siguiente->valor.getId() >= v.getId()){
+		while(aux->siguiente != NULL && aux->siguiente->valor->getId() >= v->getId()){
 			aux = aux->siguiente;
 		}
 		nuevo->siguiente = aux->siguiente;
@@ -30,17 +30,17 @@ void Lista::insertarEnOrden(Paciente v)
 void Lista::mostrar(){
 	pnodoLista aux = primero;
 	while(aux){
-		aux->valor.mostrar();
+		aux->valor->mostrar();
 		aux = aux->siguiente;
 	}
 }
 
-Paciente Lista::extraerPrimero(){
+Paciente* Lista::extraerPrimero(){
 	if(!primero){
-		return Paciente();
+		return NULL;
 	}
 	pnodoLista aux = primero;
-	Paciente v;
+	Paciente* v;
 	primero = primero->siguiente;
 	v = aux->valor;
 	aux->siguiente = NULL;
@@ -48,16 +48,16 @@ Paciente Lista::extraerPrimero(){
 	longitud--;
 	return v;
 }
-Paciente Lista::getPrimero(){
+Paciente* Lista::getPrimero(){
 	if(!primero){
-		return Paciente(); //Consultar al profe sobre manejo de excepciones
+		return NULL; //Consultar al profe sobre manejo de excepciones
 	}
 	return primero->valor;
 }
 
-Paciente Lista::getUltimo(){
+Paciente* Lista::getUltimo(){
 	if(!primero){
-		return Paciente();
+		return NULL;
 	}
 	pnodoLista aux = primero;
 	while(aux->siguiente != NULL){
