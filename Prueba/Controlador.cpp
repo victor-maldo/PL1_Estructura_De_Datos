@@ -153,7 +153,7 @@ void Controlador::borraPacientesColas()
 void Controlador::enlistarPacientes()
 {
 	while(!salaA.esVacia()){
-		quirofanoApendicitis.insertarEnOrden(salaA.eliminar()); //He quitado los ; que había detrás del paréntesis salaABCD.eliminar
+		quirofanoApendicitis.insertarEnOrden(salaA.eliminar()); 
 		
 	}
 	while(!salaB.esVacia()){

@@ -8,13 +8,13 @@ class Pila
 public: 
 	Pila();
 	~Pila();
-	void insertar(Paciente v);  // Antes: int -> Paciente
-	Paciente extraer();         // Antes: int -> Paciente
-	Paciente cima();            // Antes: int -> Paciente
+	void insertar(Paciente v);  
+	Paciente extraer();         
+	Paciente cima();            
 	void mostrar();
 	int getLongitud();
-	bool esVacia();             //nuevo
-	void vaciar();              //nuevo
+	bool esVacia();             
+	void vaciar();              
 
 private:
 	pnodoPila ultimo;

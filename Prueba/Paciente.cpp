@@ -25,13 +25,35 @@ Paciente::Paciente(int numeroDni, bool apendicitis)
 
 Paciente::~Paciente() {}
 
-string Paciente::getDni()           { return dni; }
-int    Paciente::getId()            { return id; }
-int    Paciente::getHabitacion()    { return habitacion; }
-bool   Paciente::tieneApendicitis() { return apendicitis; }
+string Paciente::getDni()           
+{ 
+	return dni; 
+}
 
-void Paciente::setId(int id)                 { this->id = id; }
-void Paciente::setHabitacion(int habitacion) { this->habitacion = habitacion; }
+int    Paciente::getId()            
+{ 
+	return id; 
+}
+
+int    Paciente::getHabitacion()    
+{ 
+	return habitacion; 
+}
+
+bool   Paciente::tieneApendicitis() 
+{ 
+	return apendicitis; 
+}
+
+void Paciente::setId(int id)                 
+{ 
+	this->id = id; 
+}
+
+void Paciente::setHabitacion(int habitacion) 
+{ 
+	this->habitacion = habitacion; 
+}
 
 void Paciente::mostrar()
 {

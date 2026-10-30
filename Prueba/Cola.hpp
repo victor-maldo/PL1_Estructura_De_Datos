@@ -8,13 +8,13 @@ class Cola
 public:
     Cola();
     ~Cola();
-    void insertar(Paciente v);  //Antes: int -> Paciente
-    Paciente eliminar();        //Antes: int -> Paciente
+    void insertar(Paciente v);  
+    Paciente eliminar();        
     void mostrar();
-    Paciente verPrimero();      //Antes: int -> Paciente
-    int getLongitud();          //nuevo
-    bool esVacia();             //nuevo
-    void vaciar();              //nuevo
+    Paciente verPrimero();      
+    int getLongitud();          
+    bool esVacia();             
+    void vaciar();              
 private:
     pnodoCola primero, ultimo;
     int longitud;

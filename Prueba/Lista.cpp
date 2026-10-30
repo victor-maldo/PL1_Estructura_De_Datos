@@ -75,7 +75,6 @@ bool Lista::esVacia(){
 }
 
 void Lista::vaciar(){
-								// Innecesario pnodoLista aux;   
 	while(primero){
 		extraerPrimero();
 	}

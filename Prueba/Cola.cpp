@@ -7,7 +7,7 @@ Cola::Cola()
     longitud = 0;
 }
 
-void Cola::insertar(Paciente v)                   //Antes: int -> Paciente
+void Cola::insertar(Paciente v)                   
 {
     pnodoCola nuevo;
     nuevo = new NodoCola(v);
@@ -23,21 +23,21 @@ void Cola::mostrar()
 {
     pnodoCola aux = primero;
     while(aux) {
-        aux->valor.mostrar();                     //Antes: cout << aux->valor
+        aux->valor.mostrar();                     
         aux = aux->siguiente;
     }
 }
 
-Paciente Cola::eliminar()                         //Antes: int -> Paciente
+Paciente Cola::eliminar()                         
 {
     pnodoCola aux;
-    Paciente v;                                   //Antes: int -> Paciente
+    Paciente v;                                   
     aux = primero;
     if(!aux)
-        return Paciente();                        //Antes: return 0
+        return Paciente();                        
     primero = aux->siguiente;
     v = aux->valor;
-	aux->siguiente = NULL;						//CAMBIO: Declaramos el puntero siguiente a null por seguridad
+	aux->siguiente = NULL;
     delete aux;
     if(!primero)
         ultimo = NULL;
@@ -45,24 +45,24 @@ Paciente Cola::eliminar()                         //Antes: int -> Paciente
     return v;
 }
 
-Paciente Cola::verPrimero()                       // CAMBIO: int -> Paciente
+Paciente Cola::verPrimero()                       
 {
-    if(!primero)                                  // CAMBIO: comprobación nueva
+    if(!primero)                                  
         return Paciente();
     return primero->valor;
 }
 
-int Cola::getLongitud()                           // CAMBIO: nuevo
+int Cola::getLongitud()                           
 {
     return longitud;
 }
 
-bool Cola::esVacia()                              // CAMBIO: nuevo
+bool Cola::esVacia()                              
 {
     return primero == NULL;
 }
 
-void Cola::vaciar()                               // CAMBIO: nuevo
+void Cola::vaciar()                               
 {
     while(primero)
         eliminar();
@@ -70,5 +70,5 @@ void Cola::vaciar()                               // CAMBIO: nuevo
 
 Cola::~Cola()
 {
-	vaciar();		//CAMBIO: En vez de volver a poner el contenido del método "vaciar", directamente le llamamos.
+	vaciar();
 }

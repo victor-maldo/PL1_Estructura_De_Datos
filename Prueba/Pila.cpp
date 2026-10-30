@@ -6,7 +6,7 @@ Pila::Pila()
     longitud = 0;
 }
 
-void Pila::insertar(Paciente v)                    //Antes: int -> Paciente
+void Pila::insertar(Paciente v)                    
 {
     pnodoPila nuevo;
     nuevo = new NodoPila(v, ultimo);
@@ -14,25 +14,25 @@ void Pila::insertar(Paciente v)                    //Antes: int -> Paciente
     longitud++;
 }
 
-Paciente Pila::extraer()                           //Antes: int -> Paciente
+Paciente Pila::extraer()                           
 {
     pnodoPila aux;
-    Paciente v;                                    //Antes: int -> Paciente
+    Paciente v;                                    
     if(!ultimo)
-        return Paciente();                         //Antes: return 0
+        return Paciente();                         
     aux = ultimo;
     ultimo = aux->siguiente;
     v = aux->valor;
-	aux->siguiente = NULL;						//CAMBIO: Declaramos el puntero siguiente a null por seguridad
+	aux->siguiente = NULL;
     longitud--;
     delete aux;
     return v;
 }
 
-Paciente Pila::cima()                              //Antes: int -> Paciente
+Paciente Pila::cima()                              
 {
     if(!ultimo)
-        return Paciente();                         //Antes: return 0
+        return Paciente();                         
     return ultimo->valor;
 }
 
@@ -40,7 +40,7 @@ void Pila::mostrar()
 {
     pnodoPila aux = ultimo;
     while(aux) {
-        aux->valor.mostrar();                      //Antes: cout << " -> " << aux->valor
+        aux->valor.mostrar();                      
         aux = aux->siguiente;
     }
 }
@@ -50,19 +50,19 @@ int Pila::getLongitud()
     return this->longitud;
 }
 
-bool Pila::esVacia()                               //nuevo
+bool Pila::esVacia()                               
 {
     return ultimo == NULL;
 }
 
-void Pila::vaciar()                                //nuevo
+void Pila::vaciar()                                
 {
     while(ultimo) {
-		extraer();								//CAMBIO: En vez de volver a eliminar de 1 en 1, llamamos al método extraer en bucle
+		extraer();
     }
 }
 
 Pila::~Pila()
 {
-	vaciar();								//CAMBIO: En vez de volver a vaciar la pila con el mismo código, llamamos al método vaciar.
+	vaciar();
 }

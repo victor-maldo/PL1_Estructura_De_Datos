@@ -2,16 +2,16 @@
 #define NODOPILA_HPP
 
 #include <iostream>
-#include "Paciente.hpp"         //nuevo
+#include "Paciente.hpp"         
 using namespace std;
 
 class NodoPila
 {
 public:
-	NodoPila(Paciente v, NodoPila* sig = NULL);   //Antes: int -> Paciente
+	NodoPila(Paciente v, NodoPila* sig = NULL);   
 	~NodoPila();
 private:
-	Paciente valor;                               //Antes: int -> Paciente
+	Paciente valor;                               
 	NodoPila* siguiente;
 	friend class Pila;
 };
