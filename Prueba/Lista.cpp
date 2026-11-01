@@ -76,7 +76,7 @@ bool Lista::esVacia(){
 
 void Lista::vaciar(){
 	while(primero){
-		extraerPrimero();
+		delete extraerPrimero();   
 	}
 }
 

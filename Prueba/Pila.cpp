@@ -55,10 +55,10 @@ bool Pila::esVacia()
     return ultimo == NULL;
 }
 
-void Pila::vaciar()                                
+void Pila::vaciar()
 {
     while(ultimo) {
-		extraer();
+		delete extraer();          
     }
 }
 

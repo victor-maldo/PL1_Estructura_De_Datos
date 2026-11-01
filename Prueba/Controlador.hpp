@@ -46,6 +46,9 @@ private:
 	int contadorIdHernias;
 	int contadorHabApendicitis;
 	int contadorHabHernias;
+	
+	bool idUsado[100];      
+	bool habUsada[300];     
 };
 
 #endif

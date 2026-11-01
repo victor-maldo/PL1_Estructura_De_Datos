@@ -8,6 +8,11 @@ Controlador::Controlador()
 	contadorHabApendicitis = 101;
 	contadorHabHernias = 201;
 	srand(time(NULL));
+
+	for(int i = 0; i < 100; i++)        
+		idUsado[i] = false;
+	for(int i = 0; i < 300; i++)        
+		habUsada[i] = false;
 }
 
 int Controlador::pacientesEnPila()
@@ -87,9 +92,19 @@ void Controlador::encolarPacientes()
 	while (pilaPacientes.getLongitud() > 0){
 		Paciente* paciente = pilaPacientes.cima();
 		if(paciente->tieneApendicitis()){
-			
-			paciente->setId(contadorIdApendicitis);
-			paciente->setHabitacion(contadorHabApendicitis);
+
+			if(contadorIdApendicitis > 49){                                  
+				std::cout << "No quedan IDs libres para apendicitis\n";
+				break;
+			}
+			int id, hab;                                                     
+			do { id = rand() % 49 + 1; } while(idUsado[id]);                 
+			do { hab = rand() % 99 + 101; } while(habUsada[hab]);            
+			idUsado[id] = true;                                              
+			habUsada[hab] = true;                                            
+
+			paciente->setId(id);                                             
+			paciente->setHabitacion(hab);                                    
 			contadorIdApendicitis++;
 			contadorHabApendicitis++;
 			
@@ -101,9 +116,19 @@ void Controlador::encolarPacientes()
 				sala = 'B';
 			}
 		}else{
-			
-			paciente->setId(contadorIdHernias);
-			paciente->setHabitacion(contadorHabHernias);
+
+			if(contadorIdHernias > 99){                                      
+				std::cout << "No quedan IDs libres para hernias\n";
+				break;
+			}
+			int id, hab;                                                     
+			do { id = rand() % 49 + 51; } while(idUsado[id]);                
+			do { hab = rand() % 99 + 201; } while(habUsada[hab]);            
+			idUsado[id] = true;                                              
+			habUsada[hab] = true;                                            
+
+			paciente->setId(id);                                             
+			paciente->setHabitacion(hab);                                    
 			contadorIdHernias++;
 			contadorHabHernias++;
 			
@@ -121,6 +146,8 @@ void Controlador::encolarPacientes()
 	}
 
 }
+
+
 
 void Controlador::muestraPacientesSalasAyB()
 {
@@ -184,10 +211,18 @@ void Controlador::muestraPacientesHernias()
 
 void Controlador::buscarPacientes()
 {
-	std::cout << "Paciente con apendicitis con menor prioridad:\n";
-	quirofanoApendicitis.getUltimo()->mostrar();
-	std::cout << "Paciente con hernias de mayor prioridad:\n";
-	quirofanoHernias.getPrimero()->mostrar();
+	if(quirofanoApendicitis.esVacia()){                                   
+		std::cout << "No hay pacientes con apendicitis en el quirofano\n";
+	}else{
+		std::cout << "Apendicitis menor prioridad -> ";
+		quirofanoApendicitis.getUltimo()->mostrar();
+	}
+	if(quirofanoHernias.esVacia()){                                       
+		std::cout << "No hay pacientes con hernias en el quirofano\n";
+	}else{
+		std::cout << "Hernias mayor prioridad -> ";
+		quirofanoHernias.getPrimero()->mostrar();
+	}
 }
 
 void Controlador::reiniciar()
@@ -203,9 +238,12 @@ void Controlador::reiniciar()
 	contadorIdHernias = 51;
 	contadorHabApendicitis = 101;
 	contadorHabHernias = 201;
-	
-}
 
+	for(int i = 0; i < 100; i++)        
+		idUsado[i] = false;
+	for(int i = 0; i < 300; i++)        
+		habUsada[i] = false;
+}
 Controlador::~Controlador()
 {
 }

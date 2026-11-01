@@ -62,10 +62,11 @@ bool Cola::esVacia()
     return primero == NULL;
 }
 
-void Cola::vaciar()                               
+// Cola.cpp
+void Cola::vaciar()
 {
     while(primero)
-        eliminar();
+        delete eliminar();         
 }
 
 Cola::~Cola()
